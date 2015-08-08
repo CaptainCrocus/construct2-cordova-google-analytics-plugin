@@ -1,10 +1,10 @@
 ﻿function GetPluginSettings()
 {
 	return {
-		"name":			"CPGAWrapper",				// as appears in 'insert object' dialog, can be changed as long as "id" stays the same
-		"id":			"CPGAWrapper",				// this is used to identify this plugin and is saved to the project; never change it
-		"version":		"1.0",					// (float in x.y format) Plugin version - C2 shows compatibility warnings based on this
-		"description":	"Wrapper plugin for functions of Cordova Google Plugin Analytics",
+		"name":			"CPGAWrapper",			// as appears in 'insert object' dialog, can be changed as long as "id" stays the same
+		"id":			"CPGAWrapper",			// this is used to identify this plugin and is saved to the project; never change it
+		"version":		"0.0.1",				// (float in x.y format) Plugin version - C2 shows compatibility warnings based on this
+		"description":	"Wrapper plugin for functions of Cordova Google Plugin Analytics https://github.com/danwilson/google-analytics-plugin",
 		"author":		"ZentSoft",
 		"help url":		"Zentsoft.com",
 		"category":		"General",				// Prefer to re-use existing categories, but you can set anything here
@@ -75,7 +75,7 @@ AddStringParam("Screen", "Enter the title of Screen View.", "\"Some Screen View\
 AddAction(0, af_none, "Track View", "Tracking Functions", "Track View", "Track Screen View", "trackView");
 AddStringParam("Category", "Enter the Event Name.", "\"Some Category\"");
 AddStringParam("Action", "Enter the Action Name.", "\"Some Action\"");
-AddStringParam("Action", "Enter the Action Name.", "\"Some Label\"");
+AddStringParam("Labell", "Enter the Label Name.", "\"Some Label\"");
 AddAction(1, af_none, "Track Event", "Tracking Functions", "Track Event", "Track Event", "trackEvent");
 
 ////////////////////////////////////////
@@ -106,7 +106,7 @@ ACESDone();
 // new cr.Property(ept_link,		name,	link_text,		description, "firstonly")		// has no associated value; simply calls "OnPropertyChanged" on click
 
 var property_list = [
-	new cr.Property(ept_integer, 	"My property",		77,		"An example property.")
+	new cr.Property(ept_text, 	"Tracking ID",		"UA-XXXX-YY",		"An example Tracking ID.")
 	];
 	
 // Called by IDE when a new object type is to be created

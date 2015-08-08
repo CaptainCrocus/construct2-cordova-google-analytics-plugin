@@ -51,6 +51,7 @@ cr.plugins_.CPGAWrapper = function(runtime)
 	// called whenever an instance is created
 	instanceProto.onCreate = function()
 	{
+		window.analytics.startTrackerWithId(this.properties[0]);
 		// note the object is sealed after this call; ensure any properties you'll ever need are set on the object
 		// e.g...
 		// this.myValue = 0;
@@ -160,8 +161,8 @@ cr.plugins_.CPGAWrapper = function(runtime)
 	
 	// ... other actions here ...
 
-    Acts.prototype.trackView = function() {
-        window.analytics.trackView('Screen Title');
+    Acts.prototype.trackView = function(screentitle) {
+        window.analytics.trackView(screentitle);
     };
     Acts.prototype.trackEvent = function(category, action, label) {
         window.analytics.trackEvent(category, action, label);
