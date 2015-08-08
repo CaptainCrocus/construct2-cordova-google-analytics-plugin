@@ -164,7 +164,7 @@ cr.plugins_.CPGAWrapper = function(runtime)
         window.analytics.trackView('Screen Title');
     };
     Acts.prototype.trackEvent = function(category, action, label) {
-        window.analytics.trackView(category, action, label);
+        window.analytics.trackEvent(category, action, label);
     };
 	
 	pluginProto.acts = new Acts();
