@@ -36,7 +36,7 @@ AddAction(0, af_none, "Track View", "Tracking Functions", "Track View", "Track S
 AddStringParam("Category", "Enter the Event Name.", "\"Some Category\"");
 AddStringParam("Action", "Enter the Action Name.", "\"Some Action\"");
 AddStringParam("Label", "Enter the Label Name.", "\"Some Label\"");
-AddStringParam("Value", "Enter the Numeric Value.", "\"Some Label\"");
+AddNumberParam("Value", "Enter the Numeric Value.", initial_string = "0");
 AddAction(1, af_none, "Track Event", "Tracking Functions", "Track Event", "Track Event", "trackEvent");
 
 AddStringParam("Description", "Enter the Exception Description.", "\"Some Exception Description\"");

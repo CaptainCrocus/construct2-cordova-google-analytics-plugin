@@ -155,8 +155,8 @@ cr.plugins_.Google_Analytics_Wrapper = function(runtime)
         window.analytics.trackEvent(category, action, label, eventvalue);
     };
 	// Track Exception
-    Acts.prototype.trackEvent = function(category, action, label, eventvalue) {
-        window.analytics.trackEvent(category, action, label, eventvalue);
+    Acts.prototype.trackException = function(description, fatalvalue) {
+        window.analytics.trackException(description, fatalvalue);
     };
 	
 	pluginProto.acts = new Acts();
