@@ -151,8 +151,12 @@ cr.plugins_.Google_Analytics_Wrapper = function(runtime)
         window.analytics.trackView(screentitle);
     };
 	// Track Event
-    Acts.prototype.trackEvent = function(category, action, label) {
-        window.analytics.trackEvent(category, action, label);
+    Acts.prototype.trackEvent = function(category, action, label, eventvalue) {
+        window.analytics.trackEvent(category, action, label, eventvalue);
+    };
+	// Track Exception
+    Acts.prototype.trackEvent = function(category, action, label, eventvalue) {
+        window.analytics.trackEvent(category, action, label, eventvalue);
     };
 	
 	pluginProto.acts = new Acts();

@@ -1,13 +1,13 @@
 ﻿function GetPluginSettings()
 {
 	return {
-		"name":			"GoogleAnalyticsWrapper",			// as appears in 'insert object' dialog, can be changed as long as "id" stays the same
+		"name":			"Google Analytics Wrapper",			// as appears in 'insert object' dialog, can be changed as long as "id" stays the same
 		"id":			"Google_Analytics_Wrapper",			// this is used to identify this plugin and is saved to the project; never change it
 		"version":		"0.0.1",				// (float in x.y format) Plugin version - C2 shows compatibility warnings based on this
 		"description":	"Wrapper plugin for functions of Cordova Google Plugin Analytics https://github.com/danwilson/google-analytics-plugin",
 		"author":		"ZentSoft",
 		"help url":		"Zentsoft.com",
-		"category":		"General",				// Prefer to re-use existing categories, but you can set anything here
+		"category":		"Analytics",				// Prefer to re-use existing categories, but you can set anything here
 		"type":			"object",				// either "world" (appears in layout and is drawn), else "object"
 		"rotatable":	false,					// only used when "type" is "world".  Enables an angle property on the object.
 		"flags":		pf_singleglobal //0						// uncomment lines to enable flags...
@@ -39,6 +39,7 @@ AddStringParam("Label", "Enter the Label Name.", "\"Some Label\"");
 AddStringParam("Value", "Enter the Numeric Value.", "\"Some Label\"");
 AddAction(1, af_none, "Track Event", "Tracking Functions", "Track Event", "Track Event", "trackEvent");
 
+AddStringParam("Description", "Enter the Exception Description.", "\"Some Exception Description\"");
 AddComboParamOption("true");
 AddComboParamOption("false");
 AddComboParam("Fatal", "Choose value for the Fatal.");
