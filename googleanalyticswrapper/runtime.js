@@ -6,18 +6,15 @@ assert2(cr.plugins_, "cr.plugins_ not created");
 
 /////////////////////////////////////
 // Plugin class
-// *** CHANGE THE PLUGIN ID HERE *** - must match the "id" property in edittime.js
-//          vvvvvvvv
-cr.plugins_.CPGAWrapper = function(runtime)
+// Object holder for the plugin
+////////////////////////////////////
+cr.plugins_.Google_Analytics_Wrapper = function(runtime)
 {
 	this.runtime = runtime;
 };
 
 (function ()
 {
-	/////////////////////////////////////
-	// *** CHANGE THE PLUGIN ID HERE *** - must match the "id" property in edittime.js
-	//                            vvvvvvvv
 	var pluginProto = cr.plugins_.CPGAWrapper.prototype;
 		
 	/////////////////////////////////////
@@ -51,10 +48,8 @@ cr.plugins_.CPGAWrapper = function(runtime)
 	// called whenever an instance is created
 	instanceProto.onCreate = function()
 	{
+	// Start Tracking
 		window.analytics.startTrackerWithId(this.properties[0]);
-		// note the object is sealed after this call; ensure any properties you'll ever need are set on the object
-		// e.g...
-		// this.myValue = 0;
 	};
 	
 	// called whenever an instance is destroyed
@@ -151,19 +146,11 @@ cr.plugins_.CPGAWrapper = function(runtime)
 	//////////////////////////////////////
 	// Actions
 	function Acts() {};
-
-	// the example action
-////	Acts.prototype.MyAction = function (myparam)
-////	{
-////		// alert the message
-////		alert(myparam);
-////	};
-	
-	// ... other actions here ...
-
+	// Track View
     Acts.prototype.trackView = function(screentitle) {
         window.analytics.trackView(screentitle);
     };
+	// Track Event
     Acts.prototype.trackEvent = function(category, action, label) {
         window.analytics.trackEvent(category, action, label);
     };

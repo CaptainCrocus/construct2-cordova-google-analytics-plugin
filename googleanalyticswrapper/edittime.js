@@ -1,8 +1,8 @@
 ﻿function GetPluginSettings()
 {
 	return {
-		"name":			"CPGAWrapper",			// as appears in 'insert object' dialog, can be changed as long as "id" stays the same
-		"id":			"CPGAWrapper",			// this is used to identify this plugin and is saved to the project; never change it
+		"name":			"GoogleAnalyticsWrapper",			// as appears in 'insert object' dialog, can be changed as long as "id" stays the same
+		"id":			"Google_Analytics_Wrapper",			// this is used to identify this plugin and is saved to the project; never change it
 		"version":		"0.0.1",				// (float in x.y format) Plugin version - C2 shows compatibility warnings based on this
 		"description":	"Wrapper plugin for functions of Cordova Google Plugin Analytics https://github.com/danwilson/google-analytics-plugin",
 		"author":		"ZentSoft",
@@ -28,51 +28,11 @@
 };
 
 ////////////////////////////////////////
-// Parameter types:
-// AddNumberParam(label, description [, initial_string = "0"])			// a number
-// AddStringParam(label, description [, initial_string = "\"\""])		// a string
-// AddAnyTypeParam(label, description [, initial_string = "0"])			// accepts either a number or string
-// AddCmpParam(label, description)										// combo with equal, not equal, less, etc.
-// AddComboParamOption(text)											// (repeat before "AddComboParam" to add combo items)
-// AddComboParam(label, description [, initial_selection = 0])			// a dropdown list parameter
-// AddObjectParam(label, description)									// a button to click and pick an object type
-// AddLayerParam(label, description)									// accepts either a layer number or name (string)
-// AddLayoutParam(label, description)									// a dropdown list with all project layouts
-// AddKeybParam(label, description)										// a button to click and press a key (returns a VK)
-// AddAnimationParam(label, description)								// a string intended to specify an animation name
-// AddAudioFileParam(label, description)								// a dropdown list with all imported project audio files
-
-////////////////////////////////////////
-// Conditions
-
-// AddCondition(id,					// any positive integer to uniquely identify this condition
-//				flags,				// (see docs) cf_none, cf_trigger, cf_fake_trigger, cf_static, cf_not_invertible,
-//									// cf_deprecated, cf_incompatible_with_triggers, cf_looping
-//				list_name,			// appears in event wizard list
-//				category,			// category in event wizard list
-//				display_str,		// as appears in event sheet - use {0}, {1} for parameters and also <b></b>, <i></i>
-//				description,		// appears in event wizard dialog when selected
-//				script_name);		// corresponding runtime function name
-				
-// example				
-AddNumberParam("Number", "Enter a number to test if positive.");
-AddCondition(0, cf_none, "Is number positive", "My category", "{0} is positive", "Description for my condition!", "MyCondition");
-
-////////////////////////////////////////
 // Actions
 
-// AddAction(id,				// any positive integer to uniquely identify this action
-//			 flags,				// (see docs) af_none, af_deprecated
-//			 list_name,			// appears in event wizard list
-//			 category,			// category in event wizard list
-//			 display_str,		// as appears in event sheet - use {0}, {1} for parameters and also <b></b>, <i></i>
-//			 description,		// appears in event wizard dialog when selected
-//			 script_name);		// corresponding runtime function name
-// example
-////AddStringParam("Message", "Enter a string to alert.");
-////AddAction(0, af_none, "Alert", "My category", "Alert {0}", "Description for my action!", "MyAction");
 AddStringParam("Screen", "Enter the title of Screen View.", "\"Some Screen View\"");
 AddAction(0, af_none, "Track View", "Tracking Functions", "Track View", "Track Screen View", "trackView");
+
 AddStringParam("Category", "Enter the Event Name.", "\"Some Category\"");
 AddStringParam("Action", "Enter the Action Name.", "\"Some Action\"");
 AddStringParam("Labell", "Enter the Label Name.", "\"Some Label\"");
@@ -97,13 +57,6 @@ ACESDone();
 
 ////////////////////////////////////////
 // Array of property grid properties for this plugin
-// new cr.Property(ept_integer,		name,	initial_value,	description)		// an integer value
-// new cr.Property(ept_float,		name,	initial_value,	description)		// a float value
-// new cr.Property(ept_text,		name,	initial_value,	description)		// a string
-// new cr.Property(ept_color,		name,	initial_value,	description)		// a color dropdown
-// new cr.Property(ept_font,		name,	"Arial,-16", 	description)		// a font with the given face name and size
-// new cr.Property(ept_combo,		name,	"Item 1",		description, "Item 1|Item 2|Item 3")	// a dropdown list (initial_value is string of initially selected item)
-// new cr.Property(ept_link,		name,	link_text,		description, "firstonly")		// has no associated value; simply calls "OnPropertyChanged" on click
 
 var property_list = [
 	new cr.Property(ept_text, 	"Tracking ID",		"UA-XXXX-YY",		"An example Tracking ID.")
