@@ -33,7 +33,7 @@
 AddStringParam("Screen", "Enter the title of Screen View.", "\"Some Screen View\"");
 AddAction(0, af_none, "Track View", "Tracking Functions", "Track View", "Track Screen View", "trackView");
 
-AddStringParam("Category", "Enter the Event Name.", "\"Some Category\"");
+AddStringParam("Category", "Enter the Category Name.", "\"Some Category\"");
 AddStringParam("Action", "Enter the Action Name.", "\"Some Action\"");
 AddStringParam("Label", "Enter the Label Name.", "\"Some Label\"");
 AddNumberParam("Value", "Enter the Numeric Value.", initial_string = "0");
@@ -44,6 +44,12 @@ AddComboParamOption("true");
 AddComboParamOption("false");
 AddComboParam("Fatal", "Choose value for the Fatal.");
 AddAction(2, af_none, "Track Exception", "Tracking Functions", "Track Exception", "Track Exception", "trackException");
+
+AddStringParam("Category", "Enter the Category Name.", "\"Some Category\"");
+AddNumberParam("Value", "Enter the Numeric Value.", 1000);
+AddStringParam("Label", "Enter the Label Name.", "\"Some Label\"");
+AddStringParam("Variable", "Enter the Variable Name.", "\"Some Variable\"");
+AddAction(3, af_none, "Track User Timing", "Tracking Functions", "Track User Timing", "Track User Timing", "trackUserTiming");
 
 ////////////////////////////////////////
 // Expressions
@@ -57,7 +63,7 @@ AddAction(2, af_none, "Track Exception", "Tracking Functions", "Track Exception"
 //				 description);	// description in expressions panel
 
 // example
-AddExpression(0, ef_return_number, "Leet expression", "My category", "MyExpression", "Return the number 1337.");
+// AddExpression(0, ef_return_number, "Leet expression", "My category", "MyExpression", "Return the number 1337.");
 
 ////////////////////////////////////////
 ACESDone();
