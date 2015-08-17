@@ -5,8 +5,8 @@
 		"id":			"Google_Analytics_Wrapper",			// this is used to identify this plugin and is saved to the project; never change it
 		"version":		"0.0.1",				// (float in x.y format) Plugin version - C2 shows compatibility warnings based on this
 		"description":	"Wrapper plugin for functions of Cordova Google Plugin Analytics https://github.com/danwilson/google-analytics-plugin",
-		"author":		"ZentSoft",
-		"help url":		"Zentsoft.com",
+		"author":		"Captain Crocus",
+		"help url":		"ZentSoft.com",
 		"category":		"Analytics",				// Prefer to re-use existing categories, but you can set anything here
 		"type":			"object",				// either "world" (appears in layout and is drawn), else "object"
 		"rotatable":	false,					// only used when "type" is "world".  Enables an angle property on the object.

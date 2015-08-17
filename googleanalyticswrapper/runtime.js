@@ -1,8 +1,8 @@
 ﻿// ECMAScript 5 strict mode
 "use strict";
 
-assert2(cr, "cr namespace not created");
-assert2(cr.plugins_, "cr.plugins_ not created");
+// assert2(cr, "cr namespace not created");
+// assert2(cr.plugins_, "cr.plugins_ not created");
 
 /////////////////////////////////////
 // Plugin class
@@ -123,8 +123,8 @@ cr.plugins_.Google_Analytics_Wrapper = function(runtime)
 		// Called when a non-readonly property has been edited in the debugger. Usually you only
 		// will need 'name' (the property name) and 'value', but you can also use 'header' (the
 		// header title for the section) to distinguish properties with the same name.
-		if (name === "My property")
-			this.myProperty = value;
+		// if (name === "My property")
+		// 	this.myProperty = value;
 	};
 	/**END-PREVIEWONLY**/
 
@@ -133,11 +133,11 @@ cr.plugins_.Google_Analytics_Wrapper = function(runtime)
 	function Cnds() {};
 
 	// the example condition
-	Cnds.prototype.MyCondition = function (myparam)
-	{
-		// return true if number is positive
-		return myparam >= 0;
-	};
+	// Cnds.prototype.MyCondition = function (myparam)
+	// {
+	// 	// return true if number is positive
+	// 	return myparam >= 0;
+	// };
 	
 	// ... other conditions here ...
 	
@@ -160,7 +160,7 @@ cr.plugins_.Google_Analytics_Wrapper = function(runtime)
     };
 	// Track User Timing
     Acts.prototype.trackUserTiming = function(category, intervalInMilliseconds, label, variablename) {
-        window.analytics.trackException(description, intervalInMilliseconds, label, variablename);
+        window.analytics.trackTiming(category, intervalInMilliseconds, label, variablename);
     };
 	
 	pluginProto.acts = new Acts();
