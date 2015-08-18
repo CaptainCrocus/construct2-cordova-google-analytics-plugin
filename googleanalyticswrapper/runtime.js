@@ -15,7 +15,7 @@ cr.plugins_.Google_Analytics_Wrapper = function(runtime)
 
 (function ()
 {
-	var pluginProto = cr.plugins_.CPGAWrapper.prototype;
+	var pluginProto = cr.plugins_.Google_Analytics_Wrapper.prototype;
 		
 	/////////////////////////////////////
 	// Object type class
@@ -156,7 +156,14 @@ cr.plugins_.Google_Analytics_Wrapper = function(runtime)
     };
 	// Track Exception
     Acts.prototype.trackException = function(description, fatalvalue) {
-        window.analytics.trackException(description, fatalvalue);
+    	if(fatalvalue !== 0){
+        	window.analytics.trackException(description, false);
+        	console.log(description, false);
+    	}
+    	else{
+    			window.analytics.trackException(description, true);	
+	        	console.log(description, true);
+    	}
     };
 	// Track User Timing
     Acts.prototype.trackUserTiming = function(category, intervalInMilliseconds, label, variablename) {
