@@ -48,7 +48,12 @@ cr.plugins_.Google_Analytics_Wrapper = function(runtime)
 	// called whenever an instance is created
 	instanceProto.onCreate = function()
 	{
-	// Start Tracking
+		// Check runtime environment and existing of window.analytics object
+		if (!(this.runtime.isAndroid || this.runtime.isiOS))
+			return;
+		if (typeof window.analytics == 'undefined')
+			return;
+		// Start Tracking
 		window.analytics.startTrackerWithId(this.properties[0]);
 	};
 	
