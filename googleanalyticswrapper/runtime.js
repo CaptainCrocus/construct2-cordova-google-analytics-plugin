@@ -1,8 +1,8 @@
 ﻿// ECMAScript 5 strict mode
 "use strict";
 
-// assert2(cr, "cr namespace not created");
-// assert2(cr.plugins_, "cr.plugins_ not created");
+ assert2(cr, "cr namespace not created");
+ assert2(cr.plugins_, "cr.plugins_ not created");
 
 /////////////////////////////////////
 // Plugin class
@@ -153,6 +153,8 @@ cr.plugins_.Google_Analytics_Wrapper = function(runtime)
 	function Acts() {};
 	// Track View
     Acts.prototype.trackView = function(screentitle) {
+    	if(! window.analytics) return;
+
         window.analytics.trackView(screentitle);
     };
 	// Track Event
@@ -161,6 +163,8 @@ cr.plugins_.Google_Analytics_Wrapper = function(runtime)
     };
 	// Track Exception
     Acts.prototype.trackException = function(description, fatalvalue) {
+    	if(! window.analytics) return;
+
     	if(fatalvalue !== 0){
         	window.analytics.trackException(description, false);
         	console.log(description, false);
@@ -172,6 +176,8 @@ cr.plugins_.Google_Analytics_Wrapper = function(runtime)
     };
 	// Track User Timing
     Acts.prototype.trackUserTiming = function(category, intervalInMilliseconds, label, variablename) {
+    	if(! window.analytics) return;
+
         window.analytics.trackTiming(category, intervalInMilliseconds, label, variablename);
     };
 	
